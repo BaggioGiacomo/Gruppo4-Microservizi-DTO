@@ -1,0 +1,10 @@
+Magazzino:
+	NewRefillEvent
+Clienti:
+	CreateClientEvent
+	UpdateCLientEvent
+	DeleteClientEvent
+Prodotti:
+	NewProductEvent
+	UpdateProductEvent
+	DeleteProductEvent
