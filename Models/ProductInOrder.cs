@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gruppo4MicroserviziDTO.DTOs
+namespace Gruppo4MicroserviziDTO.Models
 {
     public class ProductInOrder
     {
