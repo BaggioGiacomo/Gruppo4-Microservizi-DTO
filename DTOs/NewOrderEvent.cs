@@ -14,6 +14,6 @@ namespace Gruppo4MicroserviziDTO.DTOs
         public decimal DiscountAmount { get; set; }
         public decimal DiscountedPrice { get; set; }
 
-        public IEnumerable<int> ProductsIds { get; set; }
+        public IEnumerable<ProductInOrder> Products { get; set; }
     }
 }

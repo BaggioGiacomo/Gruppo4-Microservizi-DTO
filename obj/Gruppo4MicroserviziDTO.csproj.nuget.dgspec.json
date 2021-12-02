@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mateus\\source\\repos\\Gruppo4MicroserviziDTO\\Gruppo4MicroserviziDTO\\Gruppo4MicroserviziDTO.csproj": {}
+    "C:\\Users\\Mateus\\Documents\\Carlino\\Esercizio.Microservizi.Ordini\\Gruppo4-Microservizi-DTO\\Gruppo4MicroserviziDTO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mateus\\source\\repos\\Gruppo4MicroserviziDTO\\Gruppo4MicroserviziDTO\\Gruppo4MicroserviziDTO.csproj": {
+    "C:\\Users\\Mateus\\Documents\\Carlino\\Esercizio.Microservizi.Ordini\\Gruppo4-Microservizi-DTO\\Gruppo4MicroserviziDTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mateus\\source\\repos\\Gruppo4MicroserviziDTO\\Gruppo4MicroserviziDTO\\Gruppo4MicroserviziDTO.csproj",
+        "projectUniqueName": "C:\\Users\\Mateus\\Documents\\Carlino\\Esercizio.Microservizi.Ordini\\Gruppo4-Microservizi-DTO\\Gruppo4MicroserviziDTO.csproj",
         "projectName": "Gruppo4MicroserviziDTO",
-        "projectPath": "C:\\Users\\Mateus\\source\\repos\\Gruppo4MicroserviziDTO\\Gruppo4MicroserviziDTO\\Gruppo4MicroserviziDTO.csproj",
+        "projectPath": "C:\\Users\\Mateus\\Documents\\Carlino\\Esercizio.Microservizi.Ordini\\Gruppo4-Microservizi-DTO\\Gruppo4MicroserviziDTO.csproj",
         "packagesPath": "C:\\Users\\Mateus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mateus\\source\\repos\\Gruppo4MicroserviziDTO\\Gruppo4MicroserviziDTO\\obj\\",
+        "outputPath": "C:\\Users\\Mateus\\Documents\\Carlino\\Esercizio.Microservizi.Ordini\\Gruppo4-Microservizi-DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mateus\\AppData\\Roaming\\NuGet\\NuGet.Config",
