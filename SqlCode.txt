@@ -1,0 +1,74 @@
+-- Adminer 4.8.1 MySQL 5.5.5-10.6.5-MariaDB-1:10.6.5+maria~focal dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DROP TABLE IF EXISTS `Cliente`;
+CREATE TABLE `Cliente` (
+  `Id` int(11) NOT NULL,
+  `Nome` varchar(45) NOT NULL,
+  `Cognome` varchar(45) NOT NULL,
+  `RagioneSociale` varchar(10) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+INSERT INTO `Cliente` (`Id`, `Nome`, `Cognome`, `RagioneSociale`) VALUES
+(1,	'Giacomo',	'Baggio',	'BG01');
+
+DROP TABLE IF EXISTS `Coupon`;
+CREATE TABLE `Coupon` (
+  `Id` int(11) NOT NULL,
+  `Valore` int(11) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+DROP TABLE IF EXISTS `Coupon_has_Ordine`;
+CREATE TABLE `Coupon_has_Ordine` (
+  `Coupon_Id` int(11) NOT NULL,
+  `Ordine_Id` int(11) NOT NULL,
+  PRIMARY KEY (`Coupon_Id`,`Ordine_Id`),
+  KEY `fk_Coupon_has_Ordine_Ordine1_idx` (`Ordine_Id`),
+  KEY `fk_Coupon_has_Ordine_Coupon1_idx` (`Coupon_Id`),
+  CONSTRAINT `fk_Coupon_has_Ordine_Coupon1` FOREIGN KEY (`Coupon_Id`) REFERENCES `Coupon` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Coupon_has_Ordine_Ordine1` FOREIGN KEY (`Ordine_Id`) REFERENCES `Ordine` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+DROP TABLE IF EXISTS `Ordine`;
+CREATE TABLE `Ordine` (
+  `Id` int(11) NOT NULL,
+  `PrezzoTot` decimal(10,2) NOT NULL,
+  `PrezzoScontato` decimal(10,2) NOT NULL,
+  `Sconto` int(11) NOT NULL,
+  `Cliente_Id` int(11) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `fk_Ordine_Cliente1_idx` (`Cliente_Id`),
+  CONSTRAINT `fk_Ordine_Cliente1` FOREIGN KEY (`Cliente_Id`) REFERENCES `Cliente` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+DROP TABLE IF EXISTS `Ordine_has_Prodotto`;
+CREATE TABLE `Ordine_has_Prodotto` (
+  `Ordine_Id` int(11) NOT NULL,
+  `Prodotto_Id` int(11) NOT NULL,
+  `PrezzoAlMomento` decimal(10,2) NOT NULL,
+  `Quantita` int(11) NOT NULL,
+  PRIMARY KEY (`Ordine_Id`,`Prodotto_Id`),
+  KEY `fk_Ordine_has_Prodotto_Prodotto1_idx` (`Prodotto_Id`),
+  KEY `fk_Ordine_has_Prodotto_Ordine1_idx` (`Ordine_Id`),
+  CONSTRAINT `fk_Ordine_has_Prodotto_Ordine1` FOREIGN KEY (`Ordine_Id`) REFERENCES `Ordine` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Ordine_has_Prodotto_Prodotto1` FOREIGN KEY (`Prodotto_Id`) REFERENCES `Prodotto` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+DROP TABLE IF EXISTS `Prodotto`;
+CREATE TABLE `Prodotto` (
+  `Id` int(11) NOT NULL,
+  `Nome` varchar(45) NOT NULL,
+  `Prezzo` decimal(10,2) NOT NULL,
+  `Quantita` int(11) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
